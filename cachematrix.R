@@ -1,3 +1,8 @@
+
+# This function accepts a matrix as it arguments and contains 
+# other functions that get and set the matrix inverse that will
+# be calculated in the secondary function below
+
 makeCacheMatrix <- function(m = matrix())  {
     inv <- NULL
     set_matrix <- function(y)  {
@@ -12,6 +17,11 @@ makeCacheMatrix <- function(m = matrix())  {
          set_inverse=set_inverse, 
          get_inverse=get_inverse)
 }
+
+# This function solves for the inverse of a matrix provided as an
+# attribe of an R object x, provided the inverse has not already been
+# calculated. If the inverse has been calcualated, the function returns 
+# the inverse from cache
 
 cacheSolve <- function(x, ...)  {
     inv <- x$get_inverse()
